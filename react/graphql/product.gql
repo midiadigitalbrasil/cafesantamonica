@@ -1,0 +1,27 @@
+query product($slug: String) {
+    product (slug: $slug) {
+        productId,
+        recommendations {
+            similars {
+                linkText
+                productName
+                items {
+                  	itemId,
+                  	variations{
+                      values
+                    },
+                    images {
+                        imageLabel
+                        imageText
+                        imageUrl
+                    },
+                  	sellers {
+                    		commertialOffer{
+                      	AvailableQuantity
+                    }
+                  }                  
+                }
+            }
+        }
+    }
+}
